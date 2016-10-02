@@ -1,0 +1,13 @@
+NAME
+  yum - Yellowdog Updater Modified
+
+SYNOPSIS
+  yum [options] [command] [package ...]
+
+DESCRIPTION
+  yum  is  an interactive, automated update program which can be used for
+  maintaining systems using rpm
+
+  commands:
+    * install package1 [package2] [...]
+    * update [package1] [package2] [...]
