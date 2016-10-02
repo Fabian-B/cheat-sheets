@@ -1,2 +1,2 @@
 # cheat-sheets
-various cheat sheets to look up commands quickly.
+This repository contains various cheat sheets to look up commands quickly.
