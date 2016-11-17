@@ -1,4 +1,4 @@
-
+# checking for updates
 'dnf upgrade'
 installs all updates that **can** be installed. (dependencies might prevent installation of updates)
 
