@@ -1,3 +1,9 @@
+## Man pages
+
+`man [command]`
+Lists all the options and their explanation, available to use with a certain command.
+i.e.: man usermod gives all options to use with usermod.
+
 ## Installing software
 `yum search [keyword/packagename]`
 Search for the desired software.
@@ -5,6 +11,7 @@ Search for the desired software.
 Install the software/package.
 
 ## Checking for updates
+
 `dnf upgrade`
 Installs all updates that **can** be installed. (dependencies might prevent installation of updates)
 
@@ -19,10 +26,27 @@ Adds a user with the specified name and default settings.
 `su - [username]`
 Log in as the specified user. (su = substitute user)
 
+`passwd [username]`
+Changing the password of a user, also used for initial setup.
+
+`usermod -L [username]` `usermod -U [username]`
+Respectively locks and unlocks a useraccount.
+
 `usermod -aG [groupname] [username]`
 Adds the specified user to another group.
 
+`usermod -G [groupname],[groupname] [username]`
+A list of supplementary groups wich the users is also member of.
+If the user is currently member of a group wich is not listed, the user will be removed from the group.
 
+`groups [username]`
+Lists all groups wich the specified user is member of.
+
+`userdel [username]`
+Used to delete a useraccount. The option `-r` also removes the homedir. View man page for all options.
+
+
+## file browsing and manipulating
 
 `ls /[directoryname]/`
 Lists all the files in the specified directory.
