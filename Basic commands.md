@@ -45,6 +45,14 @@ Lists all groups wich the specified user is member of.
 `userdel [username]`
 Used to delete a useraccount. The option `-r` also removes the homedir. View man page for all options.
 
+`groupadd [groupname]`
+Adds a group with the specified name.
+
+`groupmod [groupname]`
+Change settings of a specified group.
+
+`groupdel [groupname]`
+Delete a specified group. 
 
 ## file browsing and manipulating
 
