@@ -13,6 +13,6 @@ Type ```git clone [repository https URL]```
 * Commits are stored chronologically in the repository and can be viewed with: ```git log```
 * In Git, the commit you are currently on is known as the HEAD commit. In many cases, the most recently made commit is the HEAD commit.
 To see the HEAD commit, enter: ```git show HEAD```
-*Restore a file in your working directory to look exactly as it did when you last made a commit: ```git checkout HEAD [filename] ```
+* Restore a file in your working directory to look exactly as it did when you last made a commit: ```git checkout HEAD [filename] ```
 
 
