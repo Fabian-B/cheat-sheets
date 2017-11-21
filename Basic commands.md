@@ -5,9 +5,9 @@ Lists all the options and their explanation, available to use with a certain com
 i.e.: man usermod gives all options to use with usermod.
 
 ## Installing software
-`yum search [keyword/packagename]`
+`dnf search [keyword/packagename]`
 Search for the desired software.
-`yum install [packagename]`
+`dnf install [packagename]`
 Install the software/package.
 
 ## Checking for updates
