@@ -14,5 +14,6 @@ Type ```git clone [repository https URL]```
 * In Git, the commit you are currently on is known as the HEAD commit. In many cases, the most recently made commit is the HEAD commit.
 To see the HEAD commit, enter: ```git show HEAD```
 * Restore a file in your working directory to look exactly as it did when you last made a commit: ```git checkout HEAD [filename] ```
-
+* Resets the file in the staging area to be the same as the HEAD commit. In other words undo an ```git add``` action.
+* The first 7 characters of the SHA of a previous commit can be used to reset back to that commit. To do this type: ```git reset commit_SHA```
 
