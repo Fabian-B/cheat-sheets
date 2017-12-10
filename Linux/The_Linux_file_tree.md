@@ -34,7 +34,30 @@ Many times the name of a config file is the same as the application with *.conf*
 
 */etc/skel*, the skeleton directory is copied to the home directory of a newly created user. Usually contains hidden files like a .bashrc script.
 
-*/etc/sysconfig*
+*/etc/sysconfig*, not mentioned in the FHS, contains a lot of RHEL config files.
+
+##### /home
+Usually contains folders per user, commonly named afther the user. Used to store personal data. Also contains the user profile, containing many hidden files.
+
+##### /root
+Contains personal data and profile of the root user
+
+##### /srv
+Data that is served by your system. FHS allows storing cvs, rsync, ftp and www data in this location.
+
+##### /media
+Serves as a mount point for removable media devices such as CD, DVD, USB-attached devices.
+
+##### /mnt
+Should be empty and only used for temporary mount points
+
+##### /tmp
+Applications and users should use this folder to store temporary data when needed.
+
+##### /dev
+Is populated with files as the kernel is recognizing hardware. Common hardware such as hard disk devices are represented by device files in /dev.
+
+TO BE CONTINUED.
 
 
 
