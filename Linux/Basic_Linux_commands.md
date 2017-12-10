@@ -4,6 +4,8 @@
 Lists all the options and their explanation, available to use with a certain command.
 i.e.: man usermod gives all options to use with usermod.
 
+`man -k [string]` Lists all man pages containing a string.
+
 ## Installing software
 `dnf search [keyword/packagename]`
 Search for the desired software.
