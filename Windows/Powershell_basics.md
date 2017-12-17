@@ -63,6 +63,12 @@ A hashtable of people with their age.
 `$personen.Values`
 Shows the hashtable
 
+`[String]$eersteLetter = $woord.Substring(0, 1)`
+Substring saves a part of an string where the first arg is the starting position and the second arg the number of characters.
+
+`new-item -name $hoofdmap -ItemType directory`
+Creates a folder with a given name in the variable $hoofdmap
+
 ##### Conditionals and control flow
 The If conditional
 ```
@@ -173,4 +179,80 @@ Switch ($kleur)
 default {Write-Host -BackGroundColorYellow-ForegroundColorRed "`n Geen geldige kleurcode gekozen.`n"}
 }
 ```
+Write input in the oposite direction
+```
+# Read user input
+[string] $input = Read-Host
+# convert input to an array of chars.
+$array = $invoer.ToCharArray()
+# Create an empty string
+[string] $uitvoer = $null
+# Loop over each character in input
+foreach ($character in $array)
+{
+$output = $character + $output
+}
+# Write to console.
+Write-Host "Uw invoer in omgekeerde volgorde: $uitvoer"
+```
 
+Guess the number
+```
+# scherm leegmaken
+Clear-Host
+# Declareren minimum en maximum gokgetal dmv constanten
+Set-Variable min -option Constant -value 1
+Set-Variable max -option Constant -value 11
+# Genereer random getal tss 1 & 10
+[Random]$objRandom = New-Object Random
+[Int]$val = [Int]$objRandom.Next($min, $max)
+# Hulpvariabele om aantal gokjes bij te houden
+[Int]$gokjes = 0
+do
+{
+# Vraag de gebruiker naar het getal en sla dit op in
+de String variabele 'invoer'.
+[String]$invoer = Read-Host -prompt "Wat is uw
+getal?"
+# Geef invoer van gebruiker weer
+Write-Host "Uw getal is $invoer"
+# Converteer de String variabele 'invoer' naar een INT
+variabele 'getal'.
+[Int]$getal = [int]$invoer
+# Verhoog aantal 'gokjes'
+$gokjes++
+# Info geven aan de gebruiker of hij/zij hoger of
+lager moet gokken
+if($val -gt $getal)
+{
+Write-Host "Hoger!"
+}
+elseif ($val -lt $getal)
+{
+Write-Host "Lager!"
+}
+}
+while ($getal -ne $val)
+# Geef het te gokken getal en het aantal beurten weer
+Write-Host "Het te gokken getal was inderdaad $getal, en u
+hebt het geraden in $gokjes beurt(en)"
+```
+
+Check if a service is running, if not start it
+```
+# Scherm leegmaken
+Clear-Host
+# Zoek de status van de service op
+$iscsiStatus = (Get-Service -Name MSiSCSI).Status
+# Controleer de status
+# indien de status 'stopped' is ... service starten
+if ($iscsiStatus -eq "Stopped")
+{
+set-service -name MSiSCSI -Status Running
+write-host "iSCSI service gestart"
+}
+else
+{
+write-host "iSCSI service was reeds gestart"
+}
+```
