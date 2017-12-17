@@ -30,6 +30,8 @@
 * `cls` clears content of the console window
 * `Show-Command Get-ChildItem` makes a window pop up to help fill in the parameters.
 * `Get-Alias` gives an summary of the aliasses.
+* `Clear-Host` clears the screen
+* 
 
 Piping uses the vertical bar (`|`). The results of the command to the left of the pipe symbol are then fed into the command on the right side of the pipe symbol.
 * `>` redirects the result of a command to a file.
@@ -46,6 +48,20 @@ Shows a pop-up that asks if you want to continue the operation
 `[string] $input = Read-Host`
 Reads the user input and saves it in the String variable 'input'
 
+`[string] output = $input.ToUpper()`
+Convert input to capitals and save in the string 'output'
+
+`[int] $numberOfChars = $input.Length`
+Count the number of characters.
+
+`$woorden = $invoer.Split(' ')`
+Split a String based on the spaces it contains
+
+`$people = @{Jenny=38;Bart=36;Nico=8;Kristel=6;Fleur=4}`
+A hashtable of people with their age.
+
+`$personen.Values`
+Shows the hashtable
 
 ##### Conditionals and control flow
 The If conditional
@@ -126,6 +142,35 @@ browser-openen
 else
 {
 Write-Host "He, wat jammer!"
+}
+```
+
+Write a script to see if a file exists
+```
+cls
+$ChkFile= Read-host "Geef pad in om te checken"
+$FileExists= Test-Path $ChkFile
+If ($FileExists-eq$True) {
+Write-Host "$ChkFilebestaat.`n"
+}
+Else { 
+Write-Host "$ChkFilebestaatniet.`n"
+}
+```
+
+Ask a color to the user and set it as fontcolor
+```
+$kleur= Read-Host "`n`nSelecteereenkleurcode(1 t/m 7)"
+cls
+Switch ($kleur)
+{ 
+1 {Write-Host -ForegroundColorRed  "`n De gekozenkleuris rood. `n"}
+2 {Write-Host -ForegroundColorBlue "`n De gekozenkleuris blauw.`n"} 
+3 {Write-Host -ForegroundColorGreen "`n De gekozen kleur is groen.`n"} 4 {Write-Host -ForegroundColorYellow"`n De gekozen kleur is geel.`n"} 
+5 {Write-Host -ForegroundColorGray "`n De gekozen kleur is grijs.`n"} 
+6 {Write-Host -ForegroundColorCyan"`n De gekozen kleur is cyaan.`n"}
+7 {Write-Host -ForegroundColorMagenta "`n De gekozen kleur is magenta.`n"}
+default {Write-Host -BackGroundColorYellow-ForegroundColorRed "`n Geen geldige kleurcode gekozen.`n"}
 }
 ```
 
